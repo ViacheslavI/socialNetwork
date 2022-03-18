@@ -2,6 +2,7 @@ const state = {
     user: {
         loggedIn: false,
         isSubscribed: false,
+        token: !localStorage.getItem('token') || '',
     },
     token: localStorage.getItem('token' || '')
 }
