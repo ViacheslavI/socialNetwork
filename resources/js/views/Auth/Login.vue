@@ -4,7 +4,7 @@
             <form class="form" action="">
                 <my-input type="text" placeholder="email address" v-model="user.email"/>
                 <my-input type="text" placeholder="password" v-model="user.password"/>
-                <my-button type="submit">Login</my-button>
+                <my-button type="submit" @click.prevent="login">Login</my-button>
                 <router-link to="/register"><p class="message">Not registered ?</p><a href="#">Create an account</a>
                 </router-link>
             </form>
@@ -20,7 +20,12 @@ export default {
             email: '',
             password: '',
         }
-    })
+    }),
+    methods: {
+        login() {
+            this.$store.dispatch('auth/loginUser', this.user)
+        }
+    }
 }
 </script>
 
