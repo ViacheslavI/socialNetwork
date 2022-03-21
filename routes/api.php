@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('register', [\App\Http\Controllers\Api\AuthController::class, 'register']);
 Route::post('login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
+Route::post('forgot-password', [\App\Http\Controllers\Api\ForgotPasswordController::class, 'sendResetLineEmail']);
